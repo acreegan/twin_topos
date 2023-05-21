@@ -8,12 +8,18 @@ exports.handler = async (event, context) => {
   const response = await fetch(url);
   
 
+
   if (!response.ok) {
     return {
       statusCode: response.status,
       body: response.statusText
     };
   }
+
+  return {
+    statusCode: 200,
+    body: response.body
+  };
 
   const data = await response.text();
 
