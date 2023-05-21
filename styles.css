@@ -1,0 +1,16 @@
+html,
+body,
+#mapContainer {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mapContainer {
+  display: flex;
+}
+
+#mapContainer > div {
+  flex: 1;
+  height: 100%;
+}
