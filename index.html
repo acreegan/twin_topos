@@ -4,13 +4,19 @@
 <head>
   <title>Linked Google Maps</title>
   <style>
-    #map-container {
-      display: flex;
+    #mapContainer {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     }
-    
-    .map {
-      flex: 1;
-      height: 400px;
+
+    #mapContainer {
+    display: flex;
+    }
+
+    #mapContainer > div {
+    flex: 1;
+    height: 100%;
     }
   </style>
 </head>
