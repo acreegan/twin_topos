@@ -53,12 +53,12 @@
 
     // Load the Google Maps JavaScript API
     function loadMapsAPI() {
-      var script = document.createElement('script');
-      key = process.env.MAPS_API_KEY
-      script.src = `https://maps.googleapis.com/maps/api/js?key={key}&callback=initMaps`;
-      script.defer = true;
-      script.async = true;
-      document.head.appendChild(script);
+        var script = document.createElement('script');
+        script.onload = initMaps;
+        script.src = '/.netlify/functions/load_maps';
+        script.defer = true;
+        script.async = true;
+        document.head.appendChild(script);
     }
 
     // Start loading the Maps API
