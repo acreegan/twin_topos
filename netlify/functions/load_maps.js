@@ -9,15 +9,11 @@ exports.handler = async (event, context) => {
   body = response.body
 
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Hello World" ,  code:response.status, response: body}),
-    };
 
   if (!response.ok) {
     return {
       statusCode: response.status,
-      body: response.statusText
+      body: JSON.stringify({ message: "Hello World" ,  code:response.statusText, response: body})
     };
   }
 
