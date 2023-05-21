@@ -1,14 +1,19 @@
-const fetch = require('node-fetch');
-const apiKey = process.env.MAPS_API_KEY;
+// const fetch = require('node-fetch');
+// const apiKey = process.env.MAPS_API_KEY;
 
 exports.handler = async (event, context) => {
+
+return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Hello World" }),
+    };
   const url = `https://maps.googleapis.com${event.path}&key=${apiKey}`; // Append the API key to the URL
   const response = await fetch(url);
 
   if (!response.ok) {
     return {
       statusCode: response.status,
-      body: "you suck"
+      body: response.statusText
     };
   }
 
