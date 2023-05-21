@@ -6,12 +6,7 @@ exports.handler = async (event, context) => {
 
   const url = `https://maps.googleapis.com${event.path}&key=${apiKey}`; // Append the API key to the URL
   const response = await fetch(url);
-  body = response.body
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Hello World" , response: body}),
-    };
+  
 
   if (!response.ok) {
     return {
