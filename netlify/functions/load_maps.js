@@ -9,12 +9,12 @@ exports.handler = async (event, context) => {
   
 
 
-  if (!response.ok) {
-    return {
-      statusCode: response.status,
-      body: response.statusText
-    };
-  }
+//   if (!response.ok) {
+//     return {
+//       statusCode: response.status,
+//       body: response.body
+//     };
+//   }
 
   return {
     statusCode: 200,
