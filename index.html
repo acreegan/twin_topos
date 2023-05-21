@@ -54,7 +54,8 @@
     // Load the Google Maps JavaScript API
     function loadMapsAPI() {
       var script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMaps';
+      key = process.env.MAPS_API_KEY
+      script.src = `https://maps.googleapis.com/maps/api/js?key={key}&callback=initMaps`;
       script.defer = true;
       script.async = true;
       document.head.appendChild(script);
