@@ -10,6 +10,11 @@ exports.handler = async (event, context) => {
 
 
 
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Hello World" , path:event.path, code:response.status, response: body}),
+    };
+
   if (!response.ok) {
     return {
       statusCode: response.status,
