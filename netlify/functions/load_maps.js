@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
   if (!response.ok) {
     return {
       statusCode: response.status,
-      body: response.statusText
+      body: "you suck"
     };
   }
 
