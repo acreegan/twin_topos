@@ -3,12 +3,14 @@ const apiKey = process.env.MAPS_API_KEY;
 
 exports.handler = async (event, context) => {
 
-return {
+
+  const url = `https://maps.googleapis.com${event.path}&key=${apiKey}`; // Append the API key to the URL
+  const response = await fetch(url);
+
+  return {
     statusCode: 200,
     body: JSON.stringify({ message: "Hello World" }),
     };
-  const url = `https://maps.googleapis.com${event.path}&key=${apiKey}`; // Append the API key to the URL
-  const response = await fetch(url);
 
   if (!response.ok) {
     return {
