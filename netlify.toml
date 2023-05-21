@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"  # Replace with your build command
 
-[[functions]]
+[functions]
   directory = "netlify/functions"
   include = "*.js"  
