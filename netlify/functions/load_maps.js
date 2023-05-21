@@ -1,5 +1,5 @@
-// const fetch = require('node-fetch');
-// const apiKey = process.env.MAPS_API_KEY;
+const fetch = require('node-fetch');
+const apiKey = process.env.MAPS_API_KEY;
 
 exports.handler = async (event, context) => {
 
