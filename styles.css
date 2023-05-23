@@ -4,7 +4,7 @@ body {
   height: 100%
 }
 
-#map-container {
+#twin-map-container {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -12,13 +12,18 @@ body {
 }
 
 .map {
+  height: 100%;
+  width: 100%
+}
+
+.map-container {
   flex: 1 1 auto;
   min-height: 25vh;
   width: 100vw;
 }
 
 @media (min-width: 1000px) {
-  .map {
+  .map-container {
     flex: 1;
     height: 100vh;
     min-width: 30vh
