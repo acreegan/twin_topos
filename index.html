@@ -19,7 +19,9 @@
     function initMaps() {
       var mapOptions = {
         center: { lat: 40.7128, lng: -74.0060 }, // Default center coordinates (New York City)
-        zoom: 10 // Default zoom level
+        zoom: 10, // Default zoom level
+        streetViewControl: false,
+        fullScreenControl: false,
       };
 
       var map1 = new google.maps.Map(document.getElementById('map1'), mapOptions);
