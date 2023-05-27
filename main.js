@@ -7,6 +7,10 @@ function initMaps() {
         fullscreenControl: false,
         scaleControl: true,
         isFractionalZoomEnabled: true,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        }
     };
 
     var map1 = new google.maps.Map(document.getElementById('map1'), mapOptions);
