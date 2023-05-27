@@ -21,6 +21,31 @@ function initMaps() {
     const searchBox1 = new google.maps.places.SearchBox(input1)
     const searchBox2 = new google.maps.places.SearchBox(input2)
 
+    input1.addEventListener('keydown', function(event) {
+      if (event.keyCode === 13 || event.key === 'Enter') {
+        input1.blur()
+      }
+    });
+    input2.addEventListener('keydown', function(event) {
+      if (event.keyCode === 13 || event.key === 'Enter') {
+        input2.blur()
+      }
+    });
+
+    var previousViewportHeight = window.innerHeight;
+
+    window.addEventListener('resize', function() {
+      var viewportHeight = window.innerHeight;
+
+      if (viewportHeight > previousViewportHeight) {
+        input1.blur()
+        input2.blur()
+      }
+
+      // Update the previous viewport height for the next event
+      previousViewportHeight = viewportHeight;
+    });
+
     map1.controls[google.maps.ControlPosition.TOP_LEFT].push(input1);
     google.maps.event.addListenerOnce(map1, "idle", () => { 
         setTimeout(() => {input1.style.setProperty("display", "block", "important");}, 600);});
