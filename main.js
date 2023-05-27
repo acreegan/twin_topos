@@ -37,12 +37,12 @@ function initMaps() {
     const searchBox2 = new google.maps.places.SearchBox(input2)
 
     input1.addEventListener('keydown', function(event) {
-      if (event.keyCode === 13 || event.key === 'Enter') {
+      if (event.keyCode === 13 || event.key === 'Enter' || event.key === 'Tab') {
         input1.blur()
       }
     });
     input2.addEventListener('keydown', function(event) {
-      if (event.keyCode === 13 || event.key === 'Enter') {
+      if (event.keyCode === 13 || event.key === 'Enter' || event.key === 'Tab') {
         input2.blur()
       }
     });
