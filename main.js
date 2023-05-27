@@ -83,8 +83,28 @@ function initMaps() {
     searchBox1.addListener("places_changed", (s=searchBox1, mar=markers1, map=map1) => {placesChangedListener(s, mar, map)});
     searchBox2.addListener("places_changed", (s=searchBox2, mar=markers2, map=map2) => {placesChangedListener(s, mar, map)});
 
-    
+
     let zooming = false
+    google.maps.event.addListener(map1, 'center_changed', function() {
+      if (!zooming) {
+        zooming = true;
+        scale = metersPerPixel(map1.getCenter().lat(), map1.getZoom())
+        map2.setZoom(zoomFromScale(map2.getCenter().lat(), scale));
+        // console.log(`map1 scale: ${scale.toFixed(2)}, map2 scale: ${metersPerPixel(map2.getCenter().lat(), map2.getZoom()).toFixed(2)}\
+        // \nmap1 zoom:  ${map1.getZoom().toFixed(2)},  map2 zoom:  ${map2.getZoom().toFixed(2)}`)
+        zooming = false;
+    }
+    })
+    google.maps.event.addListener(map2, 'center_changed', function() {
+      if (!zooming) {
+        zooming = true;
+        scale = metersPerPixel(map2.getCenter().lat(), map2.getZoom())
+        map1.setZoom(zoomFromScale(map1.getCenter().lat(), scale));
+        // console.log(`map1 scale: ${metersPerPixel(map1.getCenter().lat(), map1.getZoom()).toFixed(2)}, map2 scale: ${scale.toFixed(2)}\
+        // \nmap1 zoom: ${map1.getZoom().toFixed(2)},  map2 zoom: ${map2.getZoom().toFixed(2)}`)
+        zooming = false;
+    }
+    })
 
     // Link the zoom levels of the two maps
     google.maps.event.addListener(map1, 'zoom_changed', function() {
