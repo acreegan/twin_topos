@@ -53,9 +53,16 @@ body {
   padding: 0;
 }
 
-#pac-container {
+.pac-container {
   padding-bottom: 12px;
   margin-right: 12px;
+}
+
+.pac-item {
+  font-size: 18px
+}
+.pac-item-query {
+  font-size: 18px
 }
 
 .pac-controls {
