@@ -72,12 +72,13 @@ body {
 #pac-input1 {
   background-color: #fff;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
-  margin-left: 12px;
+  margin: 12px 10px 0 0;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 400px;
+  border-radius: 5px;
   display: none !important;
 }
 
@@ -88,12 +89,13 @@ body {
 #pac-input2 {
   background-color: #fff;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
-  margin-left: 12px;
+  margin: 12px 10px 0 0;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 400px;
+  border-radius: 5px;
   display: none !important;
 }
 
