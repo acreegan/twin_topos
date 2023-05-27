@@ -1,5 +1,6 @@
 // Initialize the two maps
 function initMaps() {
+
     var mapOptions = {
         center: { lat: 40.7128, lng: -74.0060 }, // Default center coordinates (New York City)
         zoom: 10, // Default zoom level
@@ -15,6 +16,20 @@ function initMaps() {
 
     var map1 = new google.maps.Map(document.getElementById('map1'), mapOptions);
     var map2 = new google.maps.Map(document.getElementById('map2'), mapOptions);
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          map1.setCenter(pos);
+          map2.setCenter(pos);
+        })
+  
+      }
+  
 
     const input1 = document.getElementById("pac-input1")
     const input2 = document.getElementById("pac-input2")
